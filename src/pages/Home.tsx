@@ -85,7 +85,7 @@ export default function Home() {
       {/* ── Image / Vem är du? ── */}
       <section className="split-grid" id="why-morning">
         <div className="split-grid__img" data-reveal data-delay="0">
-          <img src="/vem-ar-du.png" alt="People collaborating" />
+          <img src="/vem-ar-du.png" alt="Entrepreneurs collaborating in a modern office" loading="lazy" />
         </div>
         <div className="split-grid__block split-grid__block--white" data-reveal data-delay="150">
           <h2>Vem är du?</h2>
@@ -113,7 +113,7 @@ export default function Home() {
           </p>
         </div>
         <div className="split-grid__img" data-reveal data-delay="150">
-          <img src="/vilka-ar-vi.jpg" alt="Team working" />
+          <img src="/vilka-ar-vi.jpg" alt="Morning Ventures team in strategy session" loading="lazy" />
         </div>
       </section>
 
