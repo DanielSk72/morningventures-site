@@ -128,7 +128,7 @@ a  { color: inherit; text-decoration: none; }
   background: var(--off-white);
   color: var(--black);
   padding: var(--spacing-xl) var(--spacing-md);
-  min-height: 80vh;
+  min-height: 68vh;
   display: flex;
   align-items: center;
 }
