@@ -8,7 +8,7 @@ export default function Header() {
     <header className="header">
       <div className="header-inner">
         <Link to="/" className="logo">
-          Morning Ventures
+          <img src="/logo-black.svg" alt="Morning Ventures" height="28" />
         </Link>
 
         <button
@@ -20,6 +20,7 @@ export default function Header() {
         </button>
 
         <nav className={`nav${menuOpen ? ' nav--open' : ''}`}>
+          <a href="#" onClick={() => setMenuOpen(false)}>Hem</a>
           <a href="#what-we-do" onClick={() => setMenuOpen(false)}>Vad vi gör</a>
           <a href="#about" onClick={() => setMenuOpen(false)}>Om oss</a>
           <a href="#why-morning" onClick={() => setMenuOpen(false)}>Varför Morning?</a>

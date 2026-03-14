@@ -1,33 +1,43 @@
 import { Helmet } from 'react-helmet-async'
+import { Compass, ScanSearch, Lightbulb, Building2, TrendingUp, GitMerge, Brain } from 'lucide-react'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const services = [
   {
+    icon: Compass,
     title: 'Venture Strategi',
-    description: 'Vi kartlägger era styrkor och möjligheter och definierar en venture-strategi som skapar tillväxt utanför kärnaffären.',
+    description: 'Identifiera vilken venturemodell som passar bäst. Skapa interna innovationsteam, samarbeta med startups eller investera i externa ventures.',
   },
   {
+    icon: ScanSearch,
     title: 'Opportunity Mapping',
-    description: 'Systematisk identifiering av obearbetade marknader, latenta kundbehov och vita fläckar som kan bli nya affärer.',
+    description: 'Analysera marknader och branscher för att hitta potential för tillväxt och innovation. Identifiera affärsområden, konkurrenter och kundbehov.',
   },
   {
+    icon: Lightbulb,
     title: 'Konceptutveckling',
-    description: 'Från insikt till prototyp – vi validerar idéer snabbt med lean-metodik innan ni investerar fullt ut.',
+    description: 'Utveckla koncept och idéer som kan omvandlas till nya ventures. Skapa MVP tjänster, utvärdera teknikplattformar eller designa affärsmodeller.',
   },
   {
+    icon: Building2,
     title: 'Bolagsbyggande',
-    description: 'Vi hjälper er att rekrytera, strukturera och lansera nya bolag med rätt ägarmodell och styrning från dag ett.',
+    description: 'Bygga nya venturebolag, etablera team och organisation. Motivera personal. Hitta och säkra finansiering. Implementera processer för mätning.',
   },
   {
+    icon: TrendingUp,
     title: 'Tillväxt & Skalning',
-    description: 'Go-to-market, distribution och skalbarhet – vi accelererar tillväxten med beprövade metoder från startup-världen.',
+    description: 'Skala upp och expandera verksamheten. Hitta nya kunder, utveckla nya produkter eller tjänster, eller expandera till nya marknader.',
   },
   {
+    icon: GitMerge,
     title: 'Exit / Integration',
-    description: 'Strategisk rådgivning kring exit, M&A eller integration av nya ventures i befintlig koncernstruktur.',
+    description: 'När venturebolaget har nått sina mål och skapat värde för moderbolaget, hjälper vi till att avgöra om det är dags att sälja eller integrera det med moderbolaget.',
   },
 ]
 
 export default function Home() {
+  useScrollReveal()
+
   return (
     <>
       <Helmet>
@@ -36,30 +46,34 @@ export default function Home() {
       </Helmet>
 
       {/* ── Hero ── */}
-      <section className="hero">
+      <section className="hero" id="home">
         <div className="hero-inner">
-          <p className="hero-label">Venture Studio</p>
-          <h1>Många inser att de kan göra något. Få vet vad. Färre vet hur.</h1>
-          <p className="hero-sub">
-            Vi är teamet som får det att hända. Morning Ventures hjälper etablerade företag att bygga nya affärer med startup-metodik och entreprenöriellt tänkande.
+          <h1 className="hero-animate hero-animate--1">En venture studio för etablerade företag.</h1>
+          <p className="hero-sub hero-animate hero-animate--2">
+            Ta hjälp av startup entreprenörer för att snabbare utnyttja ditt etablerade bolags
+            befintliga tillgångar och släpp loss dina inbyggda orättvisa konkurrensfördelar.
           </p>
-          <a href="#contact" className="btn btn-primary">Kom i kontakt</a>
+          <a href="#what-we-do" className="btn btn-yellow hero-animate hero-animate--3">Vad är corporate venturing?</a>
         </div>
       </section>
 
       {/* ── What we do ── */}
-      <section className="section" id="what-we-do">
+      <section className="section section-dark" id="what-we-do">
         <div className="section-inner">
-          <div className="section-header">
-            <p className="section-label">Vad vi gör</p>
-            <h2>En venture studio för etablerade företag</h2>
-            <p className="section-desc">
-              Vi kombinerar era befintliga tillgångar — varumärke, kapital, kunder och kompetens — med startup-metodikens hastighet och flexibilitet.
+          <div className="what-header">
+            <h2 className="what-quote" data-reveal data-delay="0">
+              Många inser att de kan göra något. Få vet vad, färre vet hur. Vi är de som ser till att det händer.
+            </h2>
+            <p className="what-desc" data-reveal data-delay="120">
+              Världen förändras och teknologiska möjligheter och hot uppstår allt snabbare. Därför börjar allt fler
+              stora företag arbeta med corporate venturing. En process där man skapar nya bolag och tjänster baserat
+              på den befintliga verksamhetens styrkor men med startups tankesätt och arbetsmetoder.
             </p>
           </div>
           <div className="services-grid">
-            {services.map((s) => (
-              <div key={s.title} className="service-card">
+            {services.map((s, i) => (
+              <div key={s.title} className="service-card" data-reveal data-delay={i * 120}>
+                <s.icon className="service-icon" size={22} strokeWidth={1.5} />
                 <h3>{s.title}</h3>
                 <p>{s.description}</p>
               </div>
@@ -68,64 +82,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Why Morning ── */}
-      <section className="section section-dark" id="why-morning">
-        <div className="section-inner">
-          <div className="section-header">
-            <p className="section-label">Varför Morning?</p>
-            <h2>Bryggan mellan etablerat och nytt</h2>
-          </div>
-          <div className="why-grid">
-            <div className="why-item">
-              <h3>Etablerade styrkor</h3>
-              <p>Ni har varumärke, kunder och kapital. Vi vet hur man aktiverar dem för att skapa nytt.</p>
-            </div>
-            <div className="why-item">
-              <h3>Startup-hastighet</h3>
-              <p>Vi rör oss snabbt, validerar tidigt och pivoterar utan prestige – precis som de bästa startups.</p>
-            </div>
-            <div className="why-item">
-              <h3>Från strategi till bolag</h3>
-              <p>Vi stannar inte vid PowerPoint. Vi bygger med er hela vägen – från idé till lanserat bolag.</p>
-            </div>
-          </div>
+      {/* ── Image / Vem är du? ── */}
+      <section className="split-grid" id="why-morning">
+        <div className="split-grid__img" data-reveal data-delay="0">
+          <img src="/vem-ar-du.png" alt="People collaborating" />
+        </div>
+        <div className="split-grid__block split-grid__block--white" data-reveal data-delay="150">
+          <h2>Vem är du?</h2>
+          <p className="block-body">
+            Du vill att det ska gå fortare. Har utmaningar i din bransch men ser digitala möjligheter
+            att utveckla och effektivisera din verksamhet.
+          </p>
+          <p className="block-body" style={{ marginTop: '1rem' }}>
+            Tror du på att göra nya saker på riktigt? Kombinera era egna resurser tillsammans med
+            nya kompetenser och arbetsätt för att dramatiskt öka möjligheterna till framgång.
+          </p>
         </div>
       </section>
 
-      {/* ── About ── */}
-      <section className="section" id="about">
-        <div className="section-inner section-inner--narrow">
-          <p className="section-label">Om oss</p>
-          <h2>Operativa entrepreneurs med track record</h2>
-          <p className="section-desc">
-            Morning Ventures grundades av entrepreneurs och bolagsbyggare med erfarenhet från allt från börsnoteringarna till bootstrappade nischer. Vi vet vad som krävs – och vi gör det tillsammans med er, inte åt er.
+      {/* ── Vilka är vi? / Image ── */}
+      <section className="split-grid" id="about">
+        <div className="split-grid__block split-grid__block--yellow" data-reveal data-delay="0">
+          <p className="block-label">Vilka är vi?</p>
+          <p className="block-sub">This is not our first Rodeo.</p>
+          <p className="block-body">
+            Som erfarna entreprenörer vet vi att all belöning kräver risk och inget kommer gratis.
+            Med oss får du mentaliteten och drivkraften av startup grundare med erfarenhet av att
+            bygga, lansera och skala nya digitala tjänster. Vi vet också hur man använder dessa
+            resurser i etablerade bolag.
           </p>
-          <p className="section-desc" style={{ marginTop: '1rem' }}>
-            Vi sitter på Regeringsgatan 111 i Stockholm och arbetar med etablerade bolag som söker snabbare digital transformation och vill möta branschutmaningar med ny kraft.
+        </div>
+        <div className="split-grid__img" data-reveal data-delay="150">
+          <img src="/vilka-ar-vi.jpg" alt="Team working" />
+        </div>
+      </section>
+
+      {/* ── AI Section ── */}
+      <section className="section section-ai" id="ai">
+        <div className="section-inner ai-inner">
+          <Brain className="ai-icon" size={80} strokeWidth={1} data-reveal data-delay="0" />
+          <h2 className="ai-heading" data-reveal data-delay="100">AI = Accelerera eller bli omsprungen.</h2>
+          <p className="ai-body" data-reveal data-delay="200">
+            AI är inte en teknisk diskussion, det är ett avgörande vägval för framtidens affär. Inom corporate
+            venturing raderar AI friktionen mellan storföretagets tyngd och startup-världens hastighet. Det
+            handlar om att ge tillgångar rätt kraft och riktning i en tid av aldrig tidigare skådad
+            accelererad förändring.
+          </p>
+          <p className="ai-body" data-reveal data-delay="300">
+            Vi integrerar AI i hela kedjan – från research och tjänsteutveckling till exekvering – detta
+            kortar radikalt tiden till marknad. Rätt utnyttjat är AI en avgörande möjlighet att snabbt
+            kapitalisera på befintliga värden. Missas tåget är risken att agila, AI-native utmanare gör
+            det på samma marknad.
           </p>
         </div>
       </section>
 
       {/* ── Contact ── */}
-      <section className="section section-contact" id="contact">
+      <section className="section section-contact section-dark" id="contact">
         <div className="section-inner section-inner--narrow">
-          <p className="section-label">Kontakt</p>
-          <h2>Redo att bygga något nytt?</h2>
-          <p className="section-desc">Hör av er – vi berättar gärna mer om hur vi arbetar.</p>
-          <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-            <div className="form-row">
-              <input type="text" placeholder="Namn" required />
-              <input type="text" placeholder="Företag" />
+          <h2 className="contact-heading" data-reveal data-delay="0">Vill du veta mer?</h2>
+          <form
+            className="contact-form"
+            data-reveal
+            data-delay="120"
+            onSubmit={(e) => {
+              e.preventDefault()
+              const fd = new FormData(e.currentTarget)
+              const name    = fd.get('name') as string
+              const company = fd.get('company') as string
+              const email   = fd.get('email') as string
+              const message = fd.get('message') as string
+              const subject = encodeURIComponent(`Kontakt från ${name}${company ? ` (${company})` : ''}`)
+              const body    = encodeURIComponent(`Namn: ${name}\nFöretag: ${company}\nE-post: ${email}\n\n${message}`)
+              window.location.href = `mailto:info@morgenland.se?subject=${subject}&body=${body}`
+            }}
+          >
+            <input name="name"    type="text"  placeholder="För- & efternamn" required />
+            <input name="company" type="text"  placeholder="Företag" />
+            <input name="email"   type="email" placeholder="E-post" required />
+            <textarea name="message" placeholder="Hur kan vi hjälpa dig?" rows={5} />
+            <div className="form-submit">
+              <button type="submit" className="btn btn-yellow">Hör av dig!</button>
             </div>
-            <input type="email" placeholder="E-post" required />
-            <textarea placeholder="Meddelande" rows={5} required />
-            <button type="submit" className="btn btn-primary">Skicka</button>
           </form>
-          <p className="contact-address">Regeringsgatan 111, 111 39 Stockholm</p>
+          <p className="contact-address" data-reveal data-delay="200">
+            Regeringsgatan 111<br />111 39 Stockholm
+          </p>
         </div>
       </section>
 
-      <footer className="footer">
+      <footer className="footer footer-dark">
         <p>© {new Date().getFullYear()} Morning Ventures AB</p>
       </footer>
     </>
