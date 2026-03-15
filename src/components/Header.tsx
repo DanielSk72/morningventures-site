@@ -1,13 +1,19 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import type { Content } from '../content/sv'
 
-export default function Header() {
+interface Props {
+  content: Content
+  lang: 'sv' | 'en'
+}
+
+export default function Header({ content: c, lang }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <header className="header">
       <div className="header-inner">
-        <Link to="/" className="logo">
+        <Link to={lang === 'en' ? '/en' : '/'} className="logo">
           <img src="/logo-black.svg" alt="Morning Ventures" height="28" />
         </Link>
 
@@ -20,11 +26,18 @@ export default function Header() {
         </button>
 
         <nav className={`nav${menuOpen ? ' nav--open' : ''}`}>
-          <a href="#" onClick={() => setMenuOpen(false)}>Hem</a>
-          <a href="#what-we-do" onClick={() => setMenuOpen(false)}>Vad vi gör</a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>Om oss</a>
-          <a href="#why-morning" onClick={() => setMenuOpen(false)}>Varför Morning?</a>
-          <a href="#contact" className="nav-cta" onClick={() => setMenuOpen(false)}>Kontakt</a>
+          <a href="#" onClick={() => setMenuOpen(false)}>{c.nav.home}</a>
+          <a href="#what-we-do" onClick={() => setMenuOpen(false)}>{c.nav.whatWeDo}</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>{c.nav.about}</a>
+          <a href="#why-morning" onClick={() => setMenuOpen(false)}>{c.nav.whyMorning}</a>
+          <a href="#contact" className="nav-cta" onClick={() => setMenuOpen(false)}>{c.nav.contact}</a>
+          <Link
+            to={lang === 'sv' ? '/en' : '/'}
+            className="lang-toggle"
+            onClick={() => setMenuOpen(false)}
+          >
+            {lang === 'sv' ? 'EN' : 'SV'}
+          </Link>
         </nav>
       </div>
     </header>
