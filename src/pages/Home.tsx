@@ -100,10 +100,10 @@ export default function Home() {
         <div className="split-grid__block split-grid__block--yellow" data-reveal data-delay="0">
           <p className="block-label">Vilka är vi?</p>
           <p className="block-body">
-            This is not our first rodeo. Vi är operativa entreprenörer som bygger, finansierar och skalar bolag. Vi kliver in där det behövs som mest genom interim management, strategisk rekrytering och finansiering för att säkra er tillväxt.
+            This is not our first rodeo. Vi är operativa entreprenörer som bygger och skalar bolag. Vi kliver in där det behövs som mest genom interim management, strategisk rekrytering, produktutveckling och finansiering för att säkra tillväxt. Vi vet att all belöning kräver risk och inget kommer gratis.
           </p>
           <p className="block-body" style={{ marginTop: '1rem' }}>
-            Vår metodik bygger på att vara en partner som identifierar tillgångar och lösningar, snarare än en passiv leverantör. AI är en av våra viktigaste enablers; vi nyttjar tekniken för att radikalt korta tid till marknad, öka precisionen i beslutsunderlag och snabbt kapitalisera på era tillgångar. Vi tar ansvar för hela resan – från första analys till en skalbar, lönsam affär.
+            Vår metodik bygger på att vara en partner som definierar hur tillgångar kan bli nya lösningar, snarare än en passiv leverantör. Erfarenhet + AI innebär vi nyttjar teknik för att radikalt korta tid till marknad, öka precision i beslutsunderlag och snabbt materialisera.
           </p>
         </div>
         <div className="split-grid__img" data-reveal data-delay="150">
