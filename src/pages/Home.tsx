@@ -99,12 +99,11 @@ export default function Home() {
       <section className="split-grid" id="about">
         <div className="split-grid__block split-grid__block--yellow" data-reveal data-delay="0">
           <p className="block-label">Vilka är vi?</p>
-          <p className="block-sub">This is not our first Rodeo.</p>
           <p className="block-body">
-            Som erfarna entreprenörer vet vi att all belöning kräver risk och inget kommer gratis.
-            Med oss får du mentaliteten och drivkraften av startup grundare med erfarenhet av att
-            bygga, lansera och skala nya digitala tjänster. Vi vet också hur man använder dessa
-            resurser i etablerade bolag.
+            This is not our first rodeo. Vi är operativa entreprenörer som bygger, finansierar och skalar bolag. Vi kliver in där det behövs som mest genom interim management, strategisk rekrytering och finansiering för att säkra er tillväxt.
+          </p>
+          <p className="block-body" style={{ marginTop: '1rem' }}>
+            Vår metodik bygger på att vara en partner som identifierar tillgångar och lösningar, snarare än en passiv leverantör. AI är en av våra viktigaste enablers; vi nyttjar tekniken för att radikalt korta tid till marknad, öka precisionen i beslutsunderlag och snabbt kapitalisera på era tillgångar. Vi tar ansvar för hela resan – från första analys till en skalbar, lönsam affär.
           </p>
         </div>
         <div className="split-grid__img" data-reveal data-delay="150">
