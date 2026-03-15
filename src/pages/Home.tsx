@@ -90,12 +90,7 @@ export default function Home() {
         <div className="split-grid__block split-grid__block--white" data-reveal data-delay="150">
           <h2>Vem är du?</h2>
           <p className="block-body">
-            Du vill att det ska gå fortare. Har utmaningar i din bransch men ser digitala möjligheter
-            att utveckla och effektivisera din verksamhet.
-          </p>
-          <p className="block-body" style={{ marginTop: '1rem' }}>
-            Tror du på att göra nya saker på riktigt? Kombinera era egna resurser tillsammans med
-            nya kompetenser och arbetsätt för att dramatiskt öka möjligheterna till framgång.
+            Du är företagsägare, affärsutvecklare eller grundare som vill öka tempot. Du ser digitala möjligheter men behöver en partner som inte bara hjälper dig rita kartan, utan också hålla i ratten. Vi söker dig som vill kombinera egna resurser med ett team som har mandat och förmåga att exekvera på riktigt.
           </p>
         </div>
       </section>
