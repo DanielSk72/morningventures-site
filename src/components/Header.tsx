@@ -17,28 +17,26 @@ export default function Header({ content: c, lang }: Props) {
           <img src="/logo-black.svg" alt="Morning Ventures" height="28" />
         </Link>
 
-        <button
-          className="menu-toggle"
-          aria-label="Toggle menu"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span /><span /><span />
-        </button>
-
         <nav className={`nav${menuOpen ? ' nav--open' : ''}`}>
           <a href="#" onClick={() => setMenuOpen(false)}>{c.nav.home}</a>
           <a href="#what-we-do" onClick={() => setMenuOpen(false)}>{c.nav.whatWeDo}</a>
           <a href="#about" onClick={() => setMenuOpen(false)}>{c.nav.about}</a>
           <a href="#why-morning" onClick={() => setMenuOpen(false)}>{c.nav.whyMorning}</a>
           <a href="#contact" className="nav-cta" onClick={() => setMenuOpen(false)}>{c.nav.contact}</a>
-          <Link
-            to={lang === 'sv' ? '/en' : '/'}
-            className="lang-toggle"
-            onClick={() => setMenuOpen(false)}
-          >
+        </nav>
+
+        <div className="header-right">
+          <Link to={lang === 'sv' ? '/en' : '/'} className="lang-toggle">
             {lang === 'sv' ? 'EN' : 'SV'}
           </Link>
-        </nav>
+          <button
+            className="menu-toggle"
+            aria-label="Toggle menu"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span /><span /><span />
+          </button>
+        </div>
       </div>
     </header>
   )
